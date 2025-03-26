@@ -2,6 +2,8 @@
 
 一个使用CloudflareWorkers做后端，D1做数据库的网站访问次数记录器，类似不算子
 
+查看在线演示：[PageMeter计数器示例](https://page.100713.xyz/示例)
+
 ## 1.后端部署：
 
 1. 注册或登录Cloudflare（废话）
@@ -59,9 +61,9 @@
 
 ## 2.前端应用
 
-1. 先下载blog-count.js文件
+1. 先下载[blog-count.js](https://github.com/2010HCY/PageMeter/releases/download/1.0.1/blog-count.js)文件
 
-2. 打开blog-count.js，把里面第六行中的
+2. 打开下载好的blog-count.js，把里面第六行中的
 
    ```
    const baseUrl = `https://<你的域名>/visitor-count?target=${encodeURIComponent(target)}`;
