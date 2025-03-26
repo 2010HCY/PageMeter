@@ -31,15 +31,20 @@
   }
 
   function updateStatistics(data) {
-    document.getElementById('PageMeter_site_uv').textContent = data.site.visitor_count || 0;
-    document.getElementById('PageMeter_site_pv').textContent = data.site.visit_count || 0;
-    document.getElementById('PageMeter_page_uv').textContent = data.page.visitor_count || 0;
-    document.getElementById('PageMeter_page_pv').textContent = data.page.visit_count || 0;
+    const updateElement = (id, value) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.textContent = value || 0;
+        console.log(`更新元素 ${id}: ${value || 0}`);
+      } else {
+        console.log(`元素 ${id} 不存在，跳过更新`);
+      }
+    };
 
-    console.log(`更新站点总访客数: ${data.site.visitor_count || 0}`);
-    console.log(`更新站点总访问次数: ${data.site.visit_count || 0}`);
-    console.log(`更新页面总访客数: ${data.page.visitor_count || 0}`);
-    console.log(`更新页面总访问次数: ${data.page.visit_count || 0}`);
+    updateElement('PageMeter_site_uv', data.site?.visitor_count);
+    updateElement('PageMeter_site_pv', data.site?.visit_count);
+    updateElement('PageMeter_page_uv', data.page?.visitor_count);
+    updateElement('PageMeter_page_pv', data.page?.visit_count);
   }
 
   function setCookie(name, value, days) {
@@ -62,5 +67,5 @@
     fetchVisitorStats();
   }
 
-  // setInterval(fetchVisitorStats, 60000);  //可选，每60秒更新数据
+  // setInterval(fetchVisitorStats, 60000); // 可选，每 60 秒刷新统计数据
 })();
