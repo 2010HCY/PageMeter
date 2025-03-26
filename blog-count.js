@@ -3,7 +3,7 @@
     const hostname = window.location.hostname;
     const target = hostname + window.location.pathname;
 
-    const baseUrl = `https://blog-count.100713.xyz/visitor-count?target=${encodeURIComponent(target)}`;
+    const baseUrl = `https://<你的域名>/visitor-count?target=${encodeURIComponent(target)}`;
     console.log(`目标 API 地址: ${baseUrl}`);
 
     try {

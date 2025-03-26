@@ -14,9 +14,20 @@ export default {
 
     try {
       const url = new URL(request.url);
+
+      if (url.pathname === "/") {
+        return new Response("部署成功！", { headers });
+      }
+
+      // 处理 API 请求
       const target = url.searchParams.get("target");
       const isNewVisitor = url.searchParams.get("newVisitor") === "true";
-      if (!target) return new Response(JSON.stringify({ error: "缺少 target 参数" }), { status: 400, headers });
+      if (!target) {
+        return new Response(
+          JSON.stringify({ error: "缺少 target 参数" }),
+          { status: 400, headers }
+        );
+      }
 
       const domain = extractDomain(target);
       console.log(`[处理请求] method=${request.method}, target=${target}, domain=${domain}, newVisitor=${isNewVisitor}`);
@@ -42,7 +53,10 @@ export default {
       return new Response("Unsupported method", { status: 405, headers });
     } catch (error) {
       console.error("服务器内部错误：", error);
-      return new Response(JSON.stringify({ error: "服务器错误: " + error.message }), { status: 500, headers });
+      return new Response(
+        JSON.stringify({ error: "服务器错误: " + error.message }),
+        { status: 500, headers }
+      );
     }
   },
 };
