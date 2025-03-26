@@ -1,0 +1,10 @@
+name = "blog-count"
+account_id = "57e18b4fb317b217ebf8b0f74415ab9e"         # 替换为你的 Cloudflare 账号 ID
+compatibility_date = "2025-03-25"      # 请确保使用合适的日期
+main = "src/index.js"
+workers_dev = false                  # 正式部署时设为 false
+
+[[d1_databases]]
+binding = "DB"                         # 此变量在代码中 env.DB 使用
+database_name = "FluxMonitor"          # 与第2步创建的数据库名称一致
+database_id = "d86fca60-255b-49cc-b467-ea2d5c94b998"    # 替换为你的数据库 ID
