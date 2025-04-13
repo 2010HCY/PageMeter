@@ -10,6 +10,8 @@
 
 ## 1.后端部署：
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/2010HCY/PageMeter)
+
 1. 注册或登录Cloudflare（废话）
 
 2. 创建一个D1数据库，名称随意，但要记住后面要用，这里我的名称叫PageMeter
