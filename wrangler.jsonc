@@ -1,0 +1,21 @@
+{
+    "name": "blog-count",
+    "account_id": "57e18b4fb317b217ebf8b0f74415ab9e",
+    "compatibility_date": "2025-03-25",
+    "main": "src/index.js",
+    "workers_dev": false,
+
+    "d1_databases": [
+        {
+            "binding": "DB",
+            "database_name": "FluxMonitor",
+            "database_id": "d86fca60-255b-49cc-b467-ea2d5c94b998"
+        }
+    ],
+
+    "observability": {
+        "logs": {
+            "enabled": true
+        }
+    }
+}
